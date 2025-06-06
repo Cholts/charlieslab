@@ -1,0 +1,175 @@
+/* -----------------------------------------------------------
+   LINEN-PAPER BACKGROUND & BASE STYLES
+----------------------------------------------------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #FAF3E0; /* linen-paper color */
+  color: #333;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------------
+   HEADER / LOGO
+----------------------------------------------------------- */
+
+header.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header.site-header img.logo {
+  height: 50px;
+}
+
+header.site-header h1.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.site-title .light {
+  font-weight: 300;
+}
+
+/* -----------------------------------------------------------
+   BOOK LISTING (index.html)
+----------------------------------------------------------- */
+
+main.book-listing {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+main.book-listing h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.books-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.book-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+.book-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-card img.cover-thumb {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.book-card .card-body {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.book-card .card-body h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.book-card .card-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* -----------------------------------------------------------
+   BOOK DETAIL PAGE (book.html)
+----------------------------------------------------------- */
+
+main.book-page {
+  max-width: 700px;
+  margin: 2rem auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.book-page header {
+  text-align: center;
+}
+
+.book-page header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.book-page header .isbn {
+  margin-top: 0.25rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.book-cover {
+  display: block;
+  max-width: 300px;
+  height: auto;
+  margin: 1rem auto;
+  border: 1px solid #ccc;
+}
+
+.book-description {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007acc;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.download-button:hover {
+  background-color: #005fa3;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+/* -----------------------------------------------------------
+   FOOTER
+----------------------------------------------------------- */
+
+footer.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+}
