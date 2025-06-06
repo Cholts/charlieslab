@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin – CharliesLAB</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Very basic styles just for this admin form */
+    main {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    label { display: block; margin: 0.75rem 0 0.25rem; }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    textarea { min-height: 100px; }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover { background: #005fa3; }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 3px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+    .note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html">
+      <img src="assets/css/clabs-logo.png" alt="CharliesLAB Logo" class="logo" />
+    </a>
+    <h1 class="site-title">Charlies<span class="light">LAB</span> Admin</h1>
+  </header>
+
+  <main>
+    <h2>Add a New Book</h2>
+    <form id="admin-form">
+      <label for="title">Title:</label>
+      <input type="text" id="title" required />
+
+      <label for="slug">Slug (<em>URL-friendly</em> lowercase, e.g. <code>learning-rust</code>):</label>
+      <input type="text" id="slug" required />
+
+      <label for="isbn">ISBN:</label>
+      <input type="text" id="isbn" />
+
+      <label for="cover">Cover image filename (e.g. <code>learning-rust-cover.jpg</code>):</label>
+      <input type="text" id="cover" />
+
+      <label for="pdf">PDF filename (e.g. <code>learning-rust.pdf</code>):</label>
+      <input type="text" id="pdf" />
+
+      <label for="desc">Description (Markdown allowed):</label>
+      <textarea id="desc"></textarea>
+
+      <button type="button" id="generate">Generate JSON Snippet</button>
+    </form>
+
+    <h3>JSON snippet → Copy/Paste into <code>books.json</code>:</h3>
+    <pre id="json-output">{ }</pre>
+
+    <p class="note">
+      After clicking “Generate JSON Snippet,” copy the object you see (including `{ }`) and paste it as a new element inside the array in <code>books.json</code>.  
+      See the example in <code>books.json</code> to know exactly where commas go.
+    </p>
+  </main>
+
+  <script>
+    document.getElementById("generate").addEventListener("click", () => {
+      const title = document.getElementById("title").value.trim();
+      const slug = document.getElementById("slug").value.trim();
+      const isbn = document.getElementById("isbn").value.trim();
+      const cover = document.getElementById("cover").value.trim();
+      const pdf = document.getElementById("pdf").value.trim();
+      const desc = document.getElementById("desc").value.trim();
+
+      if (!title || !slug) {
+        alert("Title and Slug are required.");
+        return;
+      }
+
+      const obj = {
+        title: title,
+        slug: slug,
+        isbn: isbn || "",
+        cover: cover || "",
+        pdf: pdf || "",
+        description: desc || ""
+      };
+      // Pretty-print JSON
+      const snippet = JSON.stringify(obj, null, 2);
+      document.getElementById("json-output").textContent = snippet;
+    });
+  </script>
+</body>
+</html>
