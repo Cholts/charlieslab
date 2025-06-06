@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Learning Rust",
+    "slug": "learning-rust",
+    "isbn": "978-1234567890",
+    "cover": "learning-rust-cover.jpg",
+    "pdf": "learning-rust.pdf",
+    "description": "A hands-on guide to systems programming with Rust. Covers ownership, borrowing, and advanced topics."
+  },
+  {
+    "title": "Another Book Title",
+    "slug": "another-book",
+    "isbn": "978-0987654321",
+    "cover": "another-book-cover.jpg",
+    "pdf": "another-book.pdf",
+    "description": "This is a second example book. Replace this with your own description in Markdown or plain text."
+  }
+]
