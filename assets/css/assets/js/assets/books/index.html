@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CharliesLAB Books</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html">
+      <img src="assets/css/clabs-logo.png" alt="CharliesLAB Logo" class="logo" />
+    </a>
+    <h1 class="site-title">Charlies<span class="light">LAB</span></h1>
+  </header>
+
+  <!-- MAIN BOOK LIST -->
+  <main class="book-listing">
+    <h2>Our Books</h2>
+    <div id="books-container" class="books-grid">
+      <!-- JavaScript will fill in each book card here -->
+    </div>
+    <p><em>To add or edit books, go to <code>admin.html</code>.</em></p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© <span id="current-year"></span> CharliesLAB</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+    // Load and render the book list
+    loadAndRenderBookList();
+  </script>
+</body>
+</html>
