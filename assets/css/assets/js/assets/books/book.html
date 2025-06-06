@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Details – CharliesLAB</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html">
+      <img src="assets/css/clabs-logo.png" alt="CharliesLAB Logo" class="logo" />
+    </a>
+    <h1 class="site-title">Charlies<span class="light">LAB</span></h1>
+  </header>
+
+  <!-- BOOK DETAIL -->
+  <main class="book-page">
+    <div id="book-detail-container">
+      <!-- JavaScript will inject the selected book’s details here -->
+    </div>
+    <p><a href="index.html" class="back-link">← Back to all books</a></p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© <span id="current-year"></span> CharliesLAB</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+    // Load & render the detail for whatever ?id=slug is in the URL
+    loadAndRenderBookDetail();
+  </script>
+</body>
+</html>
